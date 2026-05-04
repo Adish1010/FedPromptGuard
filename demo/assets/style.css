@@ -1,0 +1,331 @@
+/* =========================================================
+   FedPromptGuard — Streamlit Custom Stylesheet
+   Professional security-tool aesthetic: navy/teal, clean, trustworthy
+   ========================================================= */
+
+/* ---------------------------------------------------------
+   1. CSS Variables
+   --------------------------------------------------------- */
+:root {
+    --navy:   #0D1B2A;
+    --teal:   #0D9488;
+    --blue:   #1B4F72;
+    --gold:   #D4A017;
+    --red:    #991B1B;
+    --green:  #166534;
+    --bg:     #F8FAFC;
+    --card:   #FFFFFF;
+    --muted:  #6B7280;
+    --border: #E5E7EB;
+}
+
+/* ---------------------------------------------------------
+   2. Hide Streamlit chrome (footer & hamburger menu)
+   --------------------------------------------------------- */
+#MainMenu {
+    visibility: hidden !important;
+}
+
+footer {
+    visibility: hidden !important;
+}
+
+header[data-testid="stHeader"] {
+    background: var(--bg) !important;
+}
+
+/* ---------------------------------------------------------
+   3. App background
+   --------------------------------------------------------- */
+.stApp,
+[data-testid="stAppViewContainer"] {
+    background-color: var(--bg) !important;
+}
+
+/* ---------------------------------------------------------
+   4. Sidebar — dark navy background
+   --------------------------------------------------------- */
+[data-testid="stSidebar"] {
+    background-color: var(--navy) !important;
+    border-right: 1px solid #1E3A5F !important;
+}
+
+/* ---------------------------------------------------------
+   5. Sidebar text styling
+   --------------------------------------------------------- */
+/* Make sidebar text white without breaking the info card */
+[data-testid="stSidebar"] p, 
+[data-testid="stSidebar"] label,
+[data-testid="stSidebar"] h1,
+[data-testid="stSidebar"] h2,
+[data-testid="stSidebar"] h3 {
+    color: #FFFFFF !important;
+}
+
+/* Fix text contrast in selectbox/dropdown popovers */
+div[data-baseweb="popover"] p,
+div[data-baseweb="popover"] span,
+div[data-baseweb="popover"] div,
+div[data-baseweb="popover"] li {
+    color: var(--navy) !important;
+}
+div[data-baseweb="select"] span {
+    color: var(--navy) !important;
+}
+
+/* Fix text contrast in selectbox/dropdown popovers */
+div[data-baseweb="popover"] ul li,
+div[data-baseweb="popover"] ul li span,
+div[data-baseweb="popover"] ul li div {
+    color: var(--navy) !important;
+}
+div[data-baseweb="select"] span {
+    color: var(--navy) !important;
+}
+
+/* Sidebar dividers */
+[data-testid="stSidebar"] hr {
+    border-color: rgba(255, 255, 255, 0.15) !important;
+}
+
+/* Sidebar text area preview — dark input bg */
+[data-testid="stSidebar"] textarea {
+    background-color: rgba(255, 255, 255, 0.08) !important;
+    border-color: rgba(255, 255, 255, 0.15) !important;
+    color: #FFFFFF !important;
+    font-size: 12px !important;
+}
+
+/* Sidebar code block */
+[data-testid="stSidebar"] code {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    color: #67E8F9 !important;
+}
+
+/* Sidebar metric values */
+[data-testid="stSidebar"] [data-testid="stMetricValue"] p,
+[data-testid="stSidebar"] [data-testid="stMetricValue"] div,
+[data-testid="stSidebar"] [data-testid="stMetricValue"] {
+    color: var(--teal) !important;
+    font-weight: 700 !important;
+}
+
+/* Sidebar metric labels */
+[data-testid="stSidebar"] [data-testid="stMetricLabel"] p,
+[data-testid="stSidebar"] [data-testid="stMetricLabel"] div,
+[data-testid="stSidebar"] [data-testid="stMetricLabel"] {
+    color: var(--muted) !important;
+}
+
+/* ---------------------------------------------------------
+   6. Primary buttons — Premium Hover & Gradient
+   --------------------------------------------------------- */
+[data-testid="stBaseButton-primary"],
+button[kind="primary"] {
+    background: linear-gradient(135deg, var(--teal) 0%, #0F766E 100%) !important;
+    color: #FFFFFF !important;
+    border: none !important;
+    font-weight: 700 !important;
+    border-radius: 8px !important;
+    box-shadow: 0 4px 6px -1px rgba(13, 148, 136, 0.4), 0 2px 4px -1px rgba(13, 148, 136, 0.2) !important;
+    transition: all 0.3s ease !important;
+    letter-spacing: 0.5px !important;
+}
+
+[data-testid="stBaseButton-primary"]:hover,
+button[kind="primary"]:hover {
+    background: linear-gradient(135deg, #0F766E 0%, #115E59 100%) !important;
+    box-shadow: 0 6px 8px -1px rgba(13, 148, 136, 0.5), 0 4px 6px -1px rgba(13, 148, 136, 0.3) !important;
+    transform: translateY(-2px) !important;
+    color: #FFFFFF !important;
+}
+
+/* Secondary buttons (sidebar) */
+[data-testid="stSidebar"] button[kind="secondary"] {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    border-radius: 6px !important;
+    transition: all 0.2s ease !important;
+}
+
+[data-testid="stSidebar"] button[kind="secondary"] p,
+[data-testid="stSidebar"] button[kind="secondary"] div {
+    color: #FFFFFF !important;
+    font-weight: 600 !important;
+}
+
+[data-testid="stSidebar"] button[kind="secondary"]:hover {
+    background-color: rgba(255, 255, 255, 0.2) !important;
+    border-color: rgba(255, 255, 255, 0.4) !important;
+}
+
+/* ---------------------------------------------------------
+   7. Text inputs & text areas — teal focus border
+   --------------------------------------------------------- */
+textarea:focus,
+input[type="text"]:focus {
+    border-color: var(--teal) !important;
+    box-shadow: 0 0 0 2px rgba(13, 148, 136, 0.2) !important;
+}
+
+.stTextArea textarea {
+    border: 1px solid var(--border) !important;
+    border-radius: 8px !important;
+    font-size: 14px !important;
+}
+
+/* ---------------------------------------------------------
+   8. Metric containers — white card with subtle shadow
+   --------------------------------------------------------- */
+[data-testid="stMetric"] {
+    background: var(--card) !important;
+    border-radius: 10px !important;
+    padding: 14px 16px !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06) !important;
+    border: 1px solid var(--border) !important;
+}
+
+[data-testid="stMetricValue"] {
+    font-weight: 700 !important;
+    color: var(--navy) !important;
+}
+
+[data-testid="stMetricLabel"] {
+    color: var(--muted) !important;
+    font-size: 12px !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+}
+
+/* ---------------------------------------------------------
+   9. Dataframe — navy header, alternating rows
+   --------------------------------------------------------- */
+[data-testid="stDataFrame"] thead th {
+    background-color: var(--navy) !important;
+    color: #FFFFFF !important;
+    font-weight: 600 !important;
+}
+
+[data-testid="stDataFrame"] tbody tr:nth-child(even) {
+    background-color: #F1F5F9 !important;
+}
+
+[data-testid="stDataFrame"] tbody tr:nth-child(odd) {
+    background-color: var(--card) !important;
+}
+
+/* ---------------------------------------------------------
+   10. Progress bars — teal fill
+   --------------------------------------------------------- */
+[data-testid="stProgress"] > div > div {
+    background-color: var(--teal) !important;
+}
+
+[role="progressbar"] > div {
+    background-color: var(--teal) !important;
+}
+
+/* ---------------------------------------------------------
+   11. Alert boxes — subtle backgrounds
+   --------------------------------------------------------- */
+/* Info */
+[data-testid="stAlert"][data-baseweb*="info"],
+div[role="alert"].stAlert:has(svg[data-testid*="Info"]) {
+    background-color: #EFF6FF !important;
+    border-left-color: var(--blue) !important;
+    color: #1E3A5F !important;
+}
+
+/* Warning */
+[data-testid="stAlert"][data-baseweb*="warning"],
+div[role="alert"].stAlert:has(svg[data-testid*="Warning"]) {
+    background-color: #FFFBEB !important;
+    border-left-color: var(--gold) !important;
+    color: #78350F !important;
+}
+
+/* Success */
+[data-testid="stAlert"][data-baseweb*="positive"],
+div[role="alert"].stAlert:has(svg[data-testid*="Success"]) {
+    background-color: #F0FDF4 !important;
+    border-left-color: var(--green) !important;
+    color: #14532D !important;
+}
+
+/* Error */
+[data-testid="stAlert"][data-baseweb*="negative"],
+div[role="alert"].stAlert:has(svg[data-testid*="Error"]) {
+    background-color: #FEF2F2 !important;
+    border-left-color: var(--red) !important;
+    color: #7F1D1D !important;
+}
+
+/* ---------------------------------------------------------
+   12. Tab labels — teal when active
+   --------------------------------------------------------- */
+[data-testid="stTabs"] button[role="tab"] {
+    color: var(--muted) !important;
+    font-weight: 500 !important;
+    border-bottom: 2px solid transparent !important;
+    transition: all 0.2s ease !important;
+}
+
+[data-testid="stTabs"] button[role="tab"][aria-selected="true"] {
+    color: var(--teal) !important;
+    font-weight: 700 !important;
+    border-bottom-color: var(--teal) !important;
+}
+
+[data-testid="stTabs"] button[role="tab"]:hover {
+    color: var(--teal) !important;
+}
+
+/* ---------------------------------------------------------
+   13. Expander headers — navy bold
+   --------------------------------------------------------- */
+[data-testid="stExpander"] summary {
+    color: var(--navy) !important;
+    font-weight: 700 !important;
+}
+
+[data-testid="stExpander"] summary:hover {
+    color: var(--teal) !important;
+}
+
+[data-testid="stExpander"] {
+    border-color: var(--border) !important;
+    border-radius: 8px !important;
+}
+
+/* ---------------------------------------------------------
+   14. Radio buttons — teal highlight (sidebar model selector)
+   --------------------------------------------------------- */
+[data-testid="stRadio"] label span[data-checked="true"]::before,
+[data-testid="stRadio"] label input:checked + div {
+    background-color: var(--teal) !important;
+    border-color: var(--teal) !important;
+}
+
+/* ---------------------------------------------------------
+   15. Spinner — teal accent
+   --------------------------------------------------------- */
+[data-testid="stSpinner"] {
+    color: var(--teal) !important;
+}
+
+/* ---------------------------------------------------------
+   16. Plotly chart containers — subtle rounding
+   --------------------------------------------------------- */
+[data-testid="stPlotlyChart"] {
+    border-radius: 8px !important;
+    overflow: hidden !important;
+}
+
+/* ---------------------------------------------------------
+   17. Captions — consistent muted style
+   --------------------------------------------------------- */
+[data-testid="stCaption"],
+.stCaption {
+    color: var(--muted) !important;
+    font-size: 12px !important;
+}
